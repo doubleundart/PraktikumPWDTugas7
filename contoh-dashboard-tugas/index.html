@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dashboard tugas praktikum berbasis HTML, CSS, dan JavaScript - Najwa, S1 Sistem Informasi Universitas Tanjungpura." />
+  <meta name="author" content="Najwa" />
+  <title>Dashboard Tugas Praktikum | Najwa</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">LABORATORIUM PEMROGRAMAN WEB</p>
+        <h1>Dashboard Tugas Praktikum</h1>
+        <p class="subtitle">Kelola tugas, pantau progres, dan praktikkan deployment web statis.</p>
+      </div>
+      <span class="pill">HTML · CSS · JavaScript</span>
+    </header>
+
+    <!-- IDENTITAS MAHASISWA: ganti teks di dalam [ ] dengan data aslimu -->
+    <section class="panel identity" aria-labelledby="identity-title">
+      <div class="avatar" aria-hidden="true">N</div>
+      <div class="identity-body">
+        <h2 id="identity-title">Najwa</h2>
+        <p class="identity-sub">Mahasiswa S1 Sistem Informasi · Universitas Tanjungpura</p>
+        <dl class="identity-list">
+          <div><dt>Nama lengkap</dt><dd>[Isi nama lengkap]</dd></div>
+          <div><dt>NIM</dt><dd>[Isi NIM]</dd></div>
+          <div><dt>Kelas</dt><dd>[Isi kelas, mis. A / B]</dd></div>
+          <div><dt>Mata kuliah</dt><dd>Pemrograman Web Dasar</dd></div>
+          <div><dt>Dosen pengampu</dt><dd>[Isi nama dosen]</dd></div>
+          <div><dt>Email</dt><dd>[Isi email kampus/aktif]</dd></div>
+          <div><dt>GitHub</dt><dd><a href="https://github.com/USERNAME" target="_blank" rel="noopener">github.com/[username]</a></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <main>
+      <section class="stats" aria-label="Ringkasan tugas">
+        <article class="stat-card"><span>Total Tugas</span><strong id="total-count">0</strong><small>Seluruh tugas</small></article>
+        <article class="stat-card"><span>Belum Selesai</span><strong id="pending-count">0</strong><small>Perlu dikerjakan</small></article>
+        <article class="stat-card"><span>Selesai</span><strong id="done-count">0</strong><small>Telah diselesaikan</small></article>
+      </section>
+      <div class="content-grid">
+        <section class="panel" aria-labelledby="form-title">
+          <div class="section-head"><h2 id="form-title">Tambah Tugas</h2><p>Isi formulir untuk mencatat tugas baru.</p></div>
+          <form id="task-form">
+            <label for="task-name">Nama tugas</label>
+            <input id="task-name" name="task-name" type="text" maxlength="80" required placeholder="Contoh: Membuat halaman profil" />
+            <label for="task-course">Mata kuliah</label>
+            <select id="task-course" name="task-course">
+              <option value="Pemrograman Web Dasar">Pemrograman Web Dasar</option>
+              <option value="Aplikasi Multimedia">Aplikasi Multimedia</option>
+              <option value="Lainnya">Lainnya</option>
+            </select>
+            <label for="task-date">Tenggat (opsional)</label>
+            <input id="task-date" name="task-date" type="date" />
+            <button type="submit" class="primary-btn">+ Tambah Tugas</button>
+            <p id="form-feedback" class="feedback" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+        <section class="panel" aria-labelledby="list-title">
+          <div class="section-head list-head">
+            <div><h2 id="list-title">Daftar Tugas</h2><p>Pilih status untuk menyaring daftar.</p></div>
+            <label class="filter-label" for="status-filter">Filter
+              <select id="status-filter"><option value="semua">Semua</option><option value="aktif">Aktif</option><option value="selesai">Selesai</option></select>
+            </label>
+          </div>
+          <div class="progress-info"><span>Progres penyelesaian</span><strong id="progress-text">0%</strong></div>
+          <div class="progress-bar" role="progressbar" aria-label="Persentase tugas selesai" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-bar"><span id="progress-fill"></span></div>
+          <ul id="task-list" class="task-list" aria-live="polite"></ul>
+          <p id="empty-message" class="empty-message" hidden>Tidak ada tugas untuk filter ini.</p>
+        </section>
+      </div>
+    </main>
+    <footer>Dibuat oleh Najwa · [NIM] · S1 Sistem Informasi, Universitas Tanjungpura · Data disimpan hanya di browser melalui localStorage.</footer>
+  </div>
+</body>
+</html>
