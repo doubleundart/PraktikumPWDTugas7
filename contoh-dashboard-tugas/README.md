@@ -15,4 +15,4 @@ Tambah, selesaikan, hapus, dan filter tugas; statistik progres; data tersimpan d
 Buka `index.html` di browser.
 
 ## Hasil Deployment
-[isi URL Vercel]
+(https://najwa-one.vercel.app/)
